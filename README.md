@@ -1,7 +1,7 @@
 
 ## Maintenance Tracker (Lua Script)
 
-This script acts as a persistent "Odometer" for your ArduPilot vehicle. Unlike Dataflash logs which are rotated and deleted, this script maintains a single file on the SD card that tracks the lifetime of the airframe.
+This script acts as a persistent "Odometer" for ArduPilot platforms. Unlike Dataflash logs which are rotated and deleted, this script maintains a single file on the SD card that tracks the lifetime of the airframe.
 
 ## Features
 Tracks and saves the following data upon every **Disarm**:
