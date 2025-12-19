@@ -1,10 +1,10 @@
 
 ## Maintenance Tracker (Lua Script)
 
-This script acts as a persistent "Odometer" and health monitor for your ArduPilot vehicle. Unlike Dataflash logs which are rotated and deleted, this script maintains a single, lightweight text file on the SD card that tracks the lifetime history of the airframe.
+This script acts as a persistent "Odometer" for your ArduPilot vehicle. Unlike Dataflash logs which are rotated and deleted, this script maintains a single file on the SD card that tracks the lifetime history of the airframe.
 
 ## Features
-It automatically tracks and saves the following data upon every **Disarm**:
+Tracks and saves the following data upon every **Disarm**:
 * Total Boot Cycles, Total Flight Count, Total Flight Hours.
 * Maximum Ground Speed (m/s) and Maximum Altitude (m) ever reached.
 * Peak Vibration levels recorded across the airframe's life.
@@ -32,15 +32,14 @@ Once the script is running, refresh your parameters. You will see a new paramete
 
 | Parameter | Description | Default |
 | :--- | :--- | :--- |
-| **MNT_ENABLE** | Master switch. Set to **0** to disable, **1** to enable logging. | 1 |
-| **MNT_LOG_MASK** | Bitmask to select which sensors to monitor (see table below). | 15 |
+| **MNT_ENABLE** | Set to **0** to disable, **1** to enable logging. | 1 |
+| **MNT_LOG_MASK** | Bitmask to select which sensors to monitor| 15 |
 | **MNT_RESET** | Set to **1** to wipe the log file and reset all counters to zero. | 0 |
 
 
 ## Modifying the Script
 
-If you want to understand how the bitmask logic works, look at the `monitor_sensors()` function inside the script.
-
+If you want to understand how the bitmask logic works, look at `monitor_sensors()` .
 Here is a snippet showing how the bitmask is checked using Lua's bitwise operators:
 
 ```lua
